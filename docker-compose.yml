@@ -11,10 +11,7 @@ services:
 
   app:
     build: .
-    command: python jarbas/manage.py migrate && python jarbas/manage.py runserver 0.0.0.0:80
-    environment:
-      - SECRET_KEY=lets-rock
-      - DATABASE_URL=postgres://jarbas:mysecretpassword@postgres:5432/jarbas
+    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:80"
     ports:
       - 80
     links:
